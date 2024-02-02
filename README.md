@@ -11,12 +11,22 @@ Since, the data is of 11 months from January 15 to December 15 so we have a good
 ## Problem Statement
 
 The owner of pizza store wants to create a dashboard in which various trends of orders can be visualized. These trends can be monthly, daily or depends on pizaa name, pizza size or pizza category. 
-Also owner wants to calculate some metrics :
+Now owner wants to calculate some metrics :
 - Total Revenue
 - Average Order Value
 - Total Pizzas Sold
 - Total Orders
 - Average Pizzas Per Order
+
+
+Also owner wants to know some trends based on metrics :
+- Daily trend for Total Orders
+- Monthly trend for Total Orders
+- Percentage of Sales by Pizza Category
+- Percentage of Sales by Pizza Size
+- Pizzas sold by Pizza Category
+- Top 5 and Bottom 5 Pizzas by Revenue and Quantity
+
 
 
 
@@ -26,8 +36,10 @@ Also owner wants to calculate some metrics :
 ### Step 1 
 - Importing the dataset in MySQL Database.
 - Writing queries for the requirements to build dashboard and helps to solve the problem statement.
-- Requirements to build dashboard
+- Requirements were calculated first in MySQL with the help of SQL queries that were needed to visualize various trends in dashboard
   #### Total Revenue
+  SELECT SUM(total_price) AS Total_Revenue FROM pizza_sale;
+  
 ### Step 2
 - Open power query editor & in view tab under Data preview section, check "column distribution", "column quality" & "column profile" options.
 - Step 3 : Also since by default, profile will be opened only for 1000 rows so you need to select "column profiling based on entire dataset".
