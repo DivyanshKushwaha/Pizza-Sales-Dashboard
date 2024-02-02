@@ -2,19 +2,34 @@
 # Pizza Sales Dashboard
 
 
+
+
+This dashboard helps the Pizza store understand their customers better. It helps the Pizza store know if their customers are satisfied with their pizza quality. Through different ratings, they get to know their improvement area so thus they can improve their quality by identifying these area. 
+
+Since, the data is of 11 months from January 15 to December 15 so we have a good amount of data to visualize various aspects of our pizza sales data to gain insights and understand key trends.
+
 ## Problem Statement
 
-This dashboard helps the airlines understand their customers better. It helps the airlines know if their customers are satisfied with their services. Through different ratings, they get to know their improvement area, & thus they can improve their services by identifying these area. It also lets them know the average delay & departure time, thus since by using this dashboard they have identified this problem, they can further work on factors responsible for these unwanted delays.
+The owner of pizza store wants to create a dashboard in which various trends of orders can be visualized. These trends can be monthly, daily or depends on pizaa name, pizza size or pizza category. 
+Also owner wants to calculate some metrics :
+- Total Revenue
+- Average Order Value
+- Total Pizzas Sold
+- Total Orders
+- Average Pizzas Per Order
 
-Since, number of neutral/dissatisfied customers (almost 57 %) are more than satisfied customers (around 43 %), thus in all they must work on improving their services. 
-
-Also since average delay in arrival & departure both is 15 minutes, thus they must try to reduce it.
 
 
-### Steps followed 
 
-- Step 1 : Load data into Power BI Desktop, dataset is a csv file.
-- Step 2 : Open power query editor & in view tab under Data preview section, check "column distribution", "column quality" & "column profile" options.
+## Steps followed 
+
+### Step 1 
+- Importing the dataset in MySQL Database.
+- Writing queries for the requirements to build dashboard and helps to solve the problem statement.
+- Requirements to build dashboard
+  #### Total Revenue
+### Step 2
+- Open power query editor & in view tab under Data preview section, check "column distribution", "column quality" & "column profile" options.
 - Step 3 : Also since by default, profile will be opened only for 1000 rows so you need to select "column profiling based on entire dataset".
 - Step 4 : It was observed that in none of the columns errors & empty values were present except column named "Arrival Delay".
 - Step 5 : For calculating average delay time, null values were not taken into account as only less than 1% values are null in this column(i.e column named "Arrival Delay") 
