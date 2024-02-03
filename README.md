@@ -77,7 +77,8 @@ All Metrics are calculated by the help of SQL queries in MySQL :
 
   #### 1. Total Revenue
   The sum of the total price of all pizza orders.
-  #### SELECT SUM(total_price) AS Total_Revenue FROM pizza_sale;
+
+    SELECT SUM(total_price) AS Total_Revenue FROM pizza_sale;
 
   
   ![total revenue ](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/9ecf0795-1f4f-4a39-ac7e-06aa6b7f357b)
@@ -85,7 +86,8 @@ All Metrics are calculated by the help of SQL queries in MySQL :
 
   #### 2. Average Order Value
   The average amount spent per order, calculated by dividing the total revenue by the total number of orders.
-  #### SELECT (SUM(total_price) / COUNT(DISTINCT order_id)) AS Avg_order_Value FROM pizza_sale;
+  
+    SELECT (SUM(total_price) / COUNT(DISTINCT order_id)) AS Avg_order_Value FROM pizza_sale;
 
 
   
@@ -96,7 +98,8 @@ All Metrics are calculated by the help of SQL queries in MySQL :
 
   #### 3. Total Pizzas Sold
   The sum of the quantities of all pizzas sold.
-  #### SELECT SUM(quantity) AS Total_pizza_sold FROM pizza_sale;
+  
+    SELECT SUM(quantity) AS Total_pizza_sold FROM pizza_sale;
 
 
   ![total pizza](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/c58eaada-88cb-44c7-9011-7159d13b03f3)
@@ -104,14 +107,16 @@ All Metrics are calculated by the help of SQL queries in MySQL :
 
   #### 4. Total Orders 
   The total number of orders placed.
-  #### SELECT COUNT(DISTINCT order_id) AS Total_Orders FROM pizza_sale;
+  
+    SELECT COUNT(DISTINCT order_id) AS Total_Orders FROM pizza_sale;
 
   ![total_orders](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/3bd378ae-a789-474d-88e8-1193f3581952)
 
 
   #### 5. Average Pizzas Per Order
   The Average number of pizzas sold per order, calculated by dividing the total number of pizzas sold by the total number of orders.
-  #### SELECT CAST(CAST(SUM(quantity) AS DECIMAL(10,2)) / CAST(COUNT(DISTINCT order_id)  AS DECIMAL(10,2)) AS DECIMAL(10,2)) AS Avg_Pizzas_per_order FROM pizza_sale;
+  
+    SELECT CAST(CAST(SUM(quantity) AS DECIMAL(10,2)) / CAST(COUNT(DISTINCT order_id)  AS DECIMAL(10,2)) AS DECIMAL(10,2)) AS Avg_Pizzas_per_order FROM pizza_sale;
 
   ![avg_pizza_per_order](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/cbbfadb3-91f8-44a1-b424-b6b0f8949172)
 
@@ -126,7 +131,8 @@ All Metrics are calculated by the help of SQL queries in MySQL :
 
 Create a bar chart that displays the daily trend of total orders over a specific time period. This chart will help us identity any patterns or fluctuations in order volumes on a daily basis.
 
-#### SELECT DAYNAME(order_date) AS order_day, COUNT(DISTINCT order_id) AS total_orders FROM pizza_sale GROUP BY  DAYNAME(order_date);
+
+    SELECT DAYNAME(order_date) AS order_day, COUNT(DISTINCT order_id) AS total_orders FROM pizza_sale GROUP BY  DAYNAME(order_date);
 
 
 ![order_day](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/f9b41e66-a780-4435-ad6e-6bb03b1012d8)
@@ -137,7 +143,8 @@ Create a bar chart that displays the daily trend of total orders over a specific
 
 Create a line chart that illustrates the hourly trend of total orders throughout the day. This chart will allow us to identify peak hours or periods of high order activity.
 
-#### SELECT MONTHNAME(order_date) AS order_day, COUNT(DISTINCT order_id) AS total_orders FROM pizza_sale GROUP BY  MONTHNAME(order_date);
+
+    SELECT MONTHNAME(order_date) AS order_day, COUNT(DISTINCT order_id) AS total_orders FROM pizza_sale GROUP BY  MONTHNAME(order_date);
 
 ![month_wise](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/e1ffdc46-a086-4e93-bd3e-0a8cee03c713)
 
@@ -146,7 +153,8 @@ Create a line chart that illustrates the hourly trend of total orders throughout
 
 Create a pie chart that displays the distribution of sales across different pizza categories. This chart will provide insights into the popularity of various pizza categories and their contribution to overall sales.
 
-#### SELECT pizza_category, CAST(SUM(total_price) AS DECIMAL(10,2)) as total_revenue, CAST(SUM(total_price) * 100 / (SELECT SUM(total_price) from pizza_sale) AS DECIMAL(10,2)) AS percentage FROM pizza_sale GROUP BY pizza_category
+
+    SELECT pizza_category, CAST(SUM(total_price) AS DECIMAL(10,2)) as total_revenue, CAST(SUM(total_price) * 100 / (SELECT SUM(total_price) from pizza_sale) AS DECIMAL(10,2)) AS percentage FROM pizza_sale GROUP BY pizza_category
 
 
 ![percentage_by_pizza_category](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/27190ced-69b8-46eb-9ba2-63bdc9e3db7e)
@@ -156,7 +164,8 @@ Create a pie chart that displays the distribution of sales across different pizz
 
 Generate a pie chart that represents the percentage of sales attributes to different pizza sizes. This chart will help us understand customer preference for pizza sizes and their impact on sales.
 
-#### SELECT pizza_size, CAST(SUM(total_price) AS DECIMAL(10,2)) as total_revenue, CAST(SUM(total_price) * 100 / (SELECT SUM(total_price) from pizza_sale) AS DECIMAL(10,2)) AS percentage FROM pizza_sale GROUP BY pizza_size ORDER BY pizza_size
+
+    SELECT pizza_size, CAST(SUM(total_price) AS DECIMAL(10,2)) as total_revenue, CAST(SUM(total_price) * 100 / (SELECT SUM(total_price) from pizza_sale) AS DECIMAL(10,2)) AS percentage FROM pizza_sale GROUP BY pizza_size ORDER BY pizza_size
 
 
 ![percentage_by_pizza_size](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/de87055d-f9ad-405d-bc02-d8c8ea72ba3b)
@@ -167,7 +176,7 @@ Generate a pie chart that represents the percentage of sales attributes to diffe
 
 Create a funner chart that presents the total number of pizzas sold for each pizza category. This chart will allow us to compare the sales performance of different pizza categories.
 
-#### SELECT pizza_category, SUM(quantity) as Total_Quantity_Sold FROM pizza_sale GROUP BY pizza_category ORDER BY Total_Quantity_Sold DESC
+    SELECT pizza_category, SUM(quantity) as Total_Quantity_Sold FROM pizza_sale GROUP BY pizza_category ORDER BY Total_Quantity_Sold DESC
 
 
 ![percentage_by_pizza_category](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/d11b3b5e-4fd9-43d2-b1a8-acde5d72f1f7)
@@ -178,7 +187,7 @@ Create a funner chart that presents the total number of pizzas sold for each piz
 
 - By Revenue
 
- #### SELECT pizza_name, SUM(total_price) AS Total_Revenue FROM pizza_sale GROUP BY pizza_name ORDER BY Total_Revenue DESC LIMIT 5
+      SELECT pizza_name, SUM(total_price) AS Total_Revenue FROM pizza_sale GROUP BY pizza_name ORDER BY Total_Revenue DESC LIMIT 5
 
 ![revenue_top_5](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/0775bc1a-0d6f-44c3-8b6f-5ac09d75b998)
 
@@ -186,14 +195,15 @@ Create a funner chart that presents the total number of pizzas sold for each piz
 
 - By Total Quantity
 
- #### SELECT Top 5 pizza_name, SUM(quantity) AS Total_Pizza_Sold FROM pizza_sale GROUP BY  pizza_name ORDER BY Total_Pizza_Sold DESC LIMIT 5
+      SELECT Top 5 pizza_name, SUM(quantity) AS Total_Pizza_Sold FROM pizza_sale GROUP BY  pizza_name ORDER BY Total_Pizza_Sold DESC LIMIT 5
 
  ![top 5 by quantity](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/55709471-cdf0-4d1d-8b3e-81a8e42b9adb)
 8)
 
 
 - By Total Orders
-  #### SELECT pizza_name, COUNT(DISTINCT order_id) AS Total_Orders FROM pizza_sale GROUP BY pizza_name ORDER BY Total_Orders DESC LIMIT 5
+
+      SELECT pizza_name, COUNT(DISTINCT order_id) AS Total_Orders FROM pizza_sale GROUP BY pizza_name ORDER BY Total_Orders DESC LIMIT 5
 
 ![top 5 by total orders](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/d3b765cc-0748-4b01-a064-18e3d7e74a68)
 
@@ -204,7 +214,7 @@ Create a funner chart that presents the total number of pizzas sold for each piz
 
 - By Revenue
 
- #### SELECT pizza_name, SUM(total_price) AS Total_Revenue FROM pizza_sale GROUP BY pizza_name ORDER BY Total_Revenue LIMIT 5
+      SELECT pizza_name, SUM(total_price) AS Total_Revenue FROM pizza_sale GROUP BY pizza_name ORDER BY Total_Revenue LIMIT 5
 
  
 
@@ -214,7 +224,7 @@ Create a funner chart that presents the total number of pizzas sold for each piz
 
 - By Total Quantity
 
- #### SELECT Top 5 pizza_name, SUM(quantity) AS Total_Pizza_Sold FROM pizza_sale GROUP BY  pizza_name ORDER BY Total_Pizza_Sold LIMIT 5
+      SELECT Top 5 pizza_name, SUM(quantity) AS Total_Pizza_Sold FROM pizza_sale GROUP BY  pizza_name ORDER BY Total_Pizza_Sold LIMIT 5
 
  
 
@@ -222,7 +232,8 @@ Create a funner chart that presents the total number of pizzas sold for each piz
 
 
 - By Total Orders
-  #### SELECT pizza_name, COUNT(DISTINCT order_id) AS Total_Orders FROM pizza_sale GROUP BY pizza_name ORDER BY Total_Orders  LIMIT 5
+
+      SELECT pizza_name, COUNT(DISTINCT order_id) AS Total_Orders FROM pizza_sale GROUP BY pizza_name ORDER BY Total_Orders  LIMIT 5
 
   
 
