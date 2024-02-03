@@ -4,7 +4,7 @@
 
 
 
-This dashboard helps the Pizza store understand their customers better. It helps the Pizza store know if their customers are satisfied with their pizza quality. Through different ratings, they get to know their improvement area so thus they can improve their quality by identifying these area. 
+This dashboard helps a Pizza store understand their customers better. It helps the Pizza store know if their customers are satisfied with their pizza quality. Through different ratings, they get to know their improvement area so thus they can improve their quality by identifying these area. 
 
 Since, the data is of 11 months from January 15 to December 15 so we have a good amount of data to visualize various aspects of our pizza sales data to gain insights and understand key trends.
 
@@ -37,8 +37,9 @@ Also owner wants to know some trends based on metrics :
 - Importing the dataset in MySQL Database.
 - Writing queries for the requirements to build dashboard and helps to solve the problem statement.
 - Requirements were calculated first in MySQL with the help of SQL queries that were needed to visualize various trends in dashboard
-  #### Total Revenue
+  #### 1. Total Revenue
   SELECT SUM(total_price) AS Total_Revenue FROM pizza_sale;
+  
   
 ### Step 2
 - Open power query editor & in view tab under Data preview section, check "column distribution", "column quality" & "column profile" options.
