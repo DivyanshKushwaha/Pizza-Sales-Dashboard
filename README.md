@@ -68,7 +68,7 @@ This pizza sales dataset contains 12 relevant features:
 ## Steps followed 
 
 ### Step 1 
-- Importing the dataset in MySQL Database.
+- Importing the dataset in MySQL Database with table data import wizard.
 - Writing queries for the calculation of requirements to build dashboard and helps to solve the problem statement.
 
 ### Step 2
@@ -232,8 +232,9 @@ Create a funner chart that presents the total number of pizzas sold for each piz
 
   
   ### Step 3
-  - After the Calculation of metrics and trends requirements , we go to the Power BI Desktop Software .
-  - For the Dashboards, different types of visualization method are used:
+  - After the Calculation of metrics and trends requirements , we go to the Power BI Desktop Software.
+  - We will get the dataset by connecting the Power BI with MySQL server so that we can transform the data and start making dashboard.
+  - For the Dashboard, different types of visualization method are used:
 
   #### 1. Cards 
 
