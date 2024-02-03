@@ -27,7 +27,7 @@ Also owner wants to know some trends based on metrics :
 - Percentage of Sales by Pizza Category
 - Percentage of Sales by Pizza Size
 - Pizzas sold by Pizza Category
-- Top 5 and Bottom 5 Pizzas by Revenue and Quantity
+- Top 5 and Bottom 5 Pizzas by Revenue, Quantity and Total Orders
 
 
 ## About the Dataset
@@ -232,13 +232,21 @@ Create a funner chart that presents the total number of pizzas sold for each piz
 
   
   ### Step 3
-  - After the Calculation of metrics and trends requirements , go to the Power BI Desktop Software .
-  - For the Dashboards, different types of visualization method are used :
+  - After the Calculation of metrics and trends requirements , we go to the Power BI Desktop Software .
+  - For the Dashboards, different types of visualization method are used:
 
   #### 1. Cards 
 
   - Cards are used to show different requirement values.
   - All metrics are shown in dashboard using cards - Total Revenue, Average Order Value, Total Pizzas Sold, Total Orders, Average Pizzas Per Order
+  - All metrics measures are calculated as :
+
+                Total Revenue = SUM('pizza_sales'[total_price])
+                Average Order Value = [Total Revenue]/[Total Orders]
+                Total Pizzas Sold = SUM(pizza_sales[quantity])
+                Average Pizza per Order = [Total Pizzas Sold]/[Total Orders]
+                Total Orders = DISTINCTCOUNT(pizza_sales[order_id])
+
 
 
 ![cards](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/5292a4e5-935e-4880-bdfb-cc9432db4d4c)
@@ -251,9 +259,44 @@ Create a funner chart that presents the total number of pizzas sold for each piz
   - All trend charts are visualized in the dashboard -  Daily trend for Total Orders, Monthly trend for Total Orders, Percentage of Sales by Pizza Category, Percentage of Sales by Pizza Size, Pizzas sold by     Pizza Category
 
 
-  ![Trend charts](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/7702569b-1968-45de-a1f6-5bcf60e9bbd8)
+  ![trends](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/1efb92ea-c326-4140-a12d-7c4b69f2c9d1)
 
-  - For the Visualization of the Daily Trend for Total Orders chart , we have calculated new column named 'using DAX expression
+  - For the Visualization of the Monthly Trend for Total Orders chart , a new column named 'Order Month' is created using DAX expression:
+  
+        
+        Order Month = UPPER(LEFT(pizza_sales[Month Name],3))
+
+
+  - For the Visualization of the Daily Trend for Total Orders chart , a new column named 'Order Day' is created using DAX expression:
+  
+        
+        Order Day = UPPER(LEFT(pizza_sales[Day Name],3))
+
+  - For the Visualization of Percentage Sales by Pizza Category Pie Chart and Percentage Sales by Pizza Size, we took Total Revenue as value which was distributed by categories and sizes.
+  - For the Viasualization of Total Pizzas sold by Category, we created a line chart between category and Total Pizzas Sold.
+
+
+  #### 3. Top 5 and Bottom 5 Pizzas by Revenue, Quantity and Total Orders 
+
+  - To Visualize the Top 5 and Bottom 5 pizzas by Revenue, we created a new measure by DAX expression:
+  
+        Total Revenue = SUM('pizza_sales'[total_price])
+
+  - To Visualize the Top 5 and Bottom 5 pizzas by Quantity, we created Total Pizzas Sold measure by DAX expression:
+  
+        Total Pizzas Sold = SUM(pizza_sales[quantity])
+
+  - To Visualize the Top 5 and Bottom 5 pizzas by Total Order, a new measure created by DAX expression:
+  
+        Total Orders = DISTINCTCOUNT(pizza_sales[order_id])
+
+    ###### Snapshot of Top 5 and Bottom 5 Dashboard:
+
+    ![top 5](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/5bd1d086-6d73-4604-af0f-c5038a853aaf)
+
+
+
+## Insights
 
 
 
