@@ -254,9 +254,13 @@ Create a funner chart that presents the total number of pizzas sold for each piz
   - All metrics measures are calculated as :
 
                 Total Revenue = SUM('pizza_sales'[total_price])
+    
                 Average Order Value = [Total Revenue]/[Total Orders]
+    
                 Total Pizzas Sold = SUM(pizza_sales[quantity])
+    
                 Average Pizza per Order = [Total Pizzas Sold]/[Total Orders]
+    
                 Total Orders = DISTINCTCOUNT(pizza_sales[order_id])
 
 
