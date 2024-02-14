@@ -30,6 +30,8 @@ Also owner wants to know some trends based on metrics :
 - Top 5 and Bottom 5 Pizzas by Revenue, Quantity and Total Orders
 
 
+
+
 ## About the Dataset
 
 This pizza sales dataset contains 12 relevant features:
@@ -63,7 +65,14 @@ This pizza sales dataset contains 12 relevant features:
 - MySQL
 - Power BI 
 
+## Dashboard (Power BI Service)
 
+### Page 1
+![dashboard1](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/5709ebd4-911e-4dfd-a880-2616be7768fb)
+
+
+### Page 2
+![dashboard2](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/cbf2d192-8af8-4509-849a-74ccc2c7e0ac)
 
 ## Steps followed 
 
@@ -310,14 +319,7 @@ Create a funner chart that presents the total number of pizzas sold for each piz
 
     ![top and bottom](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/4206e038-af7c-4cda-910a-90b745572e8a)
 
-## Dashboard (Power BI Service)
 
-### Page 1
-![dashboard1](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/5709ebd4-911e-4dfd-a880-2616be7768fb)
-
-
-### Page 2
-![dashboard2](https://github.com/DivyanshKushwaha/Pizza-Sales-Dashboard/assets/121238698/cbf2d192-8af8-4509-849a-74ccc2c7e0ac)
 
 
 ## Insights
