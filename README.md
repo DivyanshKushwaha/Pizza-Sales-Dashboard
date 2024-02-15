@@ -6,7 +6,7 @@
 
 This dashboard helps a Pizza store understand their customers better. It helps the Pizza store know if their customers are satisfied with their pizza quality. Through different ratings, they get to know their improvement area so thus they can improve their quality by identifying these area. 
 
-Since, the data is of 11 months from January to December of year 2015 so we have a good amount of data to visualize various aspects of our pizza sales data to gain insights and understand key trends.
+Since, the data is of January to December of year 2015 so we have a good amount of data to visualize various aspects of our pizza sales data to gain insights and understand key trends.
 
 
 ## Problem Statement
